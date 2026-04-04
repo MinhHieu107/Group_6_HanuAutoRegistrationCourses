@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Detail | HANU Automatic Registration</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#bdc2ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#e0e0ff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#380b00",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "secondary-container": "#d2d4ff",
+                    "background": "#f9f9f9",
+                    "tertiary-fixed": "#ffdbd0",
+                    "outline": "#767683",
+                    "on-tertiary-container": "#e17c5a",
+                    "surface-tint": "#4c56af",
+                    "surface-variant": "#e2e2e2",
+                    "outline-variant": "#c6c5d4",
+                    "on-primary-fixed-variant": "#343d96",
+                    "primary-fixed": "#e0e0ff",
+                    "surface-bright": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "on-surface-variant": "#454652",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c1c3ed",
+                    "primary": "#000666",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "secondary": "#585c80",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1a237e",
+                    "on-secondary-fixed": "#151839",
+                    "on-tertiary-fixed-variant": "#7b2e12",
+                    "surface": "#f9f9f9",
+                    "on-primary-container": "#8690ee",
+                    "on-secondary-fixed-variant": "#414467",
+                    "on-surface": "#1a1c1c",
+                    "on-secondary-container": "#575b7f",
+                    "surface-container": "#eeeeee",
+                    "surface-container-low": "#f3f3f3",
+                    "tertiary-container": "#5c1800",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-fixed": "#390c00",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-fixed": "#000767",
+                    "surface-dim": "#dadada",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e8e8e8",
+                    "inverse-on-surface": "#f1f1f1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-[#f9f9f9] dark:bg-slate-950 flex justify-between items-center w-full px-8 py-4 sticky top-0 z-50">
+<div class="text-xl font-bold tracking-tight text-[#1A237E] dark:text-[#bdc2ff]">HANU Automatic Registration</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] hover:bg-[#f3f3f3] dark:hover:bg-slate-800 transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-[#1A237E] dark:text-[#bdc2ff] font-bold border-b-2 border-[#1A237E] dark:border-[#bdc2ff] pb-1" href="#">Course Search</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] hover:bg-[#f3f3f3] dark:hover:bg-slate-800 transition-colors duration-200" href="#">Timetable</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] hover:bg-[#f3f3f3] dark:hover:bg-slate-800 transition-colors duration-200" href="#">History</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-[#f3f3f3] dark:hover:bg-slate-800 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-[#f3f3f3] dark:hover:bg-slate-800 rounded-full transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-12 md:px-8">
+<!-- Breadcrumb -->
+<div class="mb-8 flex items-center gap-2 text-on-surface-variant font-label text-sm uppercase tracking-wider">
+<span>Course Search</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-semibold">Course Detail</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Primary Content -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Course Header Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ring-1 ring-outline-variant/15">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+<div>
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold rounded-full mb-4">FIT201</span>
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight leading-tight">Advanced Web Development</h1>
+<p class="mt-4 text-on-surface-variant text-lg leading-relaxed">
+                                Mastering modern full-stack architectures, focusing on performance, scalability, and user-centric design principles in the digital era.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Bento Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Logistics Card -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-6">
+<h3 class="text-lg font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">info</span> Course Logistics
+                        </h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase font-bold tracking-tighter">Instructor</p>
+<p class="text-on-surface font-semibold">Dr. Sarah Kensington</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">star</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase font-bold tracking-tighter">Credit Value</p>
+<p class="text-on-surface font-semibold">4.0 Academic Units</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Schedule & Location Card -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-6">
+<h3 class="text-lg font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">calendar_today</span> Schedule &amp; Location
+                        </h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase font-bold tracking-tighter">Timing</p>
+<p class="text-on-surface font-semibold">Mon, Wed • 10:00 AM - 11:30 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase font-bold tracking-tighter">Venue</p>
+<p class="text-on-surface font-semibold">Innovation Lab B2, Main Campus</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Prerequisites Section -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ring-1 ring-outline-variant/15">
+<h3 class="text-xl font-bold text-primary mb-6">Prerequisites</h3>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-3 p-4 bg-surface-container rounded-lg border-l-4 border-primary-fixed">
+<span class="material-symbols-outlined text-primary-container">code</span>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase">FIT101</p>
+<p class="text-sm font-semibold">Intro to Programming</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container rounded-lg border-l-4 border-primary-fixed">
+<span class="material-symbols-outlined text-primary-container">palette</span>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase">FIT105</p>
+<p class="text-sm font-semibold">Web Design Fundamentals</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar / Action -->
+<div class="lg:col-span-4 sticky top-24">
+<div class="bg-surface-container-lowest p-6 rounded-xl ring-1 ring-outline-variant/15 shadow-sm space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-medium">Availability</span>
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-container text-[10px] font-bold rounded uppercase">Open</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-[#1A237E] h-full w-[65%]"></div>
+</div>
+<p class="text-xs text-right text-on-surface-variant font-medium">26 of 40 seats filled</p>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-gradient-to-r from-[#000666] to-[#1a237e] text-white py-4 px-6 rounded font-bold hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">playlist_add</span>
+                            Add to Preference List
+                        </button>
+<button class="w-full bg-transparent border border-outline-variant/30 text-primary py-4 px-6 rounded font-bold hover:bg-surface-container-high transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">share</span>
+                            Share Course Details
+                        </button>
+</div>
+<div class="pt-6 border-t border-outline-variant/10">
+<p class="text-xs text-on-surface-variant leading-relaxed italic">
+                            *Adding this course to your preference list does not guarantee enrollment. Please review the registration schedule.
+                        </p>
+</div>
+</div>
+<!-- Course Map Preview -->
+<div class="mt-6 rounded-xl overflow-hidden ring-1 ring-outline-variant/15 aspect-video relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern architectural map of a university campus featuring blue-toned schematic lines and minimalist building icons" data-location="Hanoi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJXiaSe1pXLubx-okvFa6q3-1nr_FOd6CMamlFpDd7onv_zBNQCvHJICbM5qIF3XUVEfjMcfub-sx5N0TXpPDkNJdCp8U7JoUC8RtlCfTEfEUY-taEVfkqmiPJe1k9LFSLq62ft43v-3WjX4UevPS_IBb5s09DF___2xlFrPZT7uoX445iN4C2E3BPWu9zFRdC5h1NmGQQBp9FMPhkkHWT1qyLE8Jqm9Qx204bua50nbZcYFpkXOOXBXXvrnif6nzRx2rqPEE4Aeo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex items-end p-4">
+<p class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">map</span>
+                            View Campus Map
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/10 bg-[#f9f9f9] dark:bg-slate-950 mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<p class="text-slate-500 dark:text-slate-400 font-label text-xs tracking-wide uppercase">© 2024 HANU University. All rights reserved. v2.4.0</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-12">
+<a class="text-slate-500 dark:text-slate-400 font-label text-xs tracking-wide uppercase hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors" href="#">Support Contacts</a>
+<a class="text-slate-500 dark:text-slate-400 font-label text-xs tracking-wide uppercase hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors" href="#">University Directory</a>
+<a class="text-slate-500 dark:text-slate-400 font-label text-xs tracking-wide uppercase hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 font-label text-xs tracking-wide uppercase hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HANU Automatic Registration - Priority Config</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#bdc2ff",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#e0e0ff",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#380b00",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "secondary-container": "#d2d4ff",
+                      "background": "#f9f9f9",
+                      "tertiary-fixed": "#ffdbd0",
+                      "outline": "#767683",
+                      "on-tertiary-container": "#e17c5a",
+                      "surface-tint": "#4c56af",
+                      "surface-variant": "#e2e2e2",
+                      "outline-variant": "#c6c5d4",
+                      "on-primary-fixed-variant": "#343d96",
+                      "primary-fixed": "#e0e0ff",
+                      "surface-bright": "#f9f9f9",
+                      "on-background": "#1a1c1c",
+                      "on-surface-variant": "#454652",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#c1c3ed",
+                      "primary": "#000666",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#bdc2ff",
+                      "secondary": "#585c80",
+                      "error": "#ba1a1a",
+                      "primary-container": "#1a237e",
+                      "on-secondary-fixed": "#151839",
+                      "on-tertiary-fixed-variant": "#7b2e12",
+                      "surface": "#f9f9f9",
+                      "on-primary-container": "#8690ee",
+                      "on-secondary-fixed-variant": "#414467",
+                      "on-surface": "#1a1c1c",
+                      "on-secondary-container": "#575b7f",
+                      "surface-container": "#eeeeee",
+                      "surface-container-low": "#f3f3f3",
+                      "tertiary-container": "#5c1800",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-surface": "#2f3131",
+                      "on-tertiary-fixed": "#390c00",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-primary-fixed": "#000767",
+                      "surface-dim": "#dadada",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#e8e8e8",
+                      "inverse-on-surface": "#f1f1f1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-[#f9f9f9] dark:bg-slate-950 flex justify-between items-center w-full px-8 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-[#1A237E] dark:text-[#bdc2ff]">HANU Automatic Registration</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-[#1A237E] dark:text-[#bdc2ff] font-bold border-b-2 border-[#1A237E] dark:border-[#bdc2ff] pb-1" href="#">Course Search</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors duration-200" href="#">Timetable</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors duration-200" href="#">History</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-600 hover:bg-[#f3f3f3] rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-[#f3f3f3] rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-12 flex flex-col gap-12">
+<!-- Hero Context -->
+<section class="flex flex-col gap-2">
+<span class="font-label text-sm uppercase tracking-widest text-on-primary-fixed-variant font-bold">Registration Window: Fall 2024</span>
+<h1 class="text-5xl font-extrabold text-primary tracking-tight">Auto-Registration Configuration</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg">Define your course priorities and constraints. Our Digital Curator will execute your registration at the millisecond the window opens.</p>
+</section>
+<!-- Bento Layout for Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Priority Drag & Drop -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="bg-surface-container-low rounded-xl p-6">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-2xl font-bold text-on-surface">Preferred Course List</h2>
+<p class="text-sm text-on-surface-variant">Drag courses to reorder priority. Top courses are attempted first.</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:bg-surface-container-high px-4 py-2 rounded-lg transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                            Add Course
+                        </button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Course Item 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center gap-4 group cursor-move">
+<div class="flex flex-col items-center text-outline-variant">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded">Priority 1</span>
+<h3 class="font-bold text-lg">Advanced Quantum Mechanics</h3>
+</div>
+<div class="flex gap-4 mt-1 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="tag">tag</span> PHY402</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span> MWF 09:00 - 10:30</span>
+<span class="flex items-center gap-1 font-bold text-primary">4.0 Credits</span>
+</div>
+</div>
+<div class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-container rounded-full text-xs font-bold">Open</div>
+</div>
+<!-- Course Item 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center gap-4 group cursor-move">
+<div class="flex flex-col items-center text-outline-variant">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded">Priority 2</span>
+<h3 class="font-bold text-lg">Neural Networks &amp; Deep Learning</h3>
+</div>
+<div class="flex gap-4 mt-1 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="tag">tag</span> CSE510</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span> TTh 14:00 - 15:30</span>
+<span class="flex items-center gap-1 font-bold text-primary">3.0 Credits</span>
+</div>
+</div>
+<div class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-container rounded-full text-xs font-bold">Open</div>
+</div>
+<!-- Course Item 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center gap-4 group cursor-move opacity-75">
+<div class="flex flex-col items-center text-outline-variant">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold px-2 py-1 bg-surface-container-high text-on-surface-variant rounded">Priority 3</span>
+<h3 class="font-bold text-lg">Ethics in Artificial Intelligence</h3>
+</div>
+<div class="flex gap-4 mt-1 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="tag">tag</span> PHL220</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span> Fri 13:00 - 16:00</span>
+<span class="flex items-center gap-1 font-bold text-primary">3.0 Credits</span>
+</div>
+</div>
+<div class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-xs font-bold">Full</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Constraints & Summary -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<!-- Constraints Section -->
+<div class="bg-surface-container-high rounded-xl p-8 flex flex-col gap-8">
+<h2 class="text-2xl font-bold text-on-surface">Constraint Rules</h2>
+<div class="flex flex-col gap-6">
+<!-- Strict Conflicts -->
+<div class="flex justify-between items-center">
+<div>
+<label class="font-bold block">Avoid Conflicts (Strict)</label>
+<span class="text-xs text-on-surface-variant">Abort registration if schedules overlap.</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<!-- Credits Slider -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="font-bold">Maximum Credits</label>
+<span class="text-primary font-black">24 Credits</span>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" max="32" min="12" type="range" value="24"/>
+</div>
+<!-- Waitlist Preference -->
+<div class="flex justify-between items-center">
+<div>
+<label class="font-bold block">Waitlist Preference</label>
+<span class="text-xs text-on-surface-variant">Automatically join waitlist if course is full.</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Final Submission Section -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border-t-4 border-primary shadow-sm flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<h2 class="text-xl font-bold text-on-surface">Registration Summary</h2>
+<p class="text-sm text-on-surface-variant">Ready to automate your enrollment.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low rounded-lg">
+<span class="block text-xs uppercase text-on-surface-variant font-bold">Total Credits</span>
+<span class="text-2xl font-black text-primary">10.0</span>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg">
+<span class="block text-xs uppercase text-on-surface-variant font-bold">Courses</span>
+<span class="text-2xl font-black text-primary">03</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-[#000666] to-[#1a237e] text-white py-4 rounded-lg font-bold text-lg hover:opacity-90 active:scale-[0.98] transition-all shadow-lg flex justify-center items-center gap-3">
+                        Confirm &amp; Submit Request
+                        <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+<div class="flex gap-3 items-start p-4 bg-surface-container text-xs text-on-surface-variant rounded-lg">
+<span class="material-symbols-outlined text-sm shrink-0" data-icon="info">info</span>
+<p>Disclaimer: Auto-registration is a scheduling tool. Success depends on seat availability and network latency. The system will start at 08:00:01 AM GMT+7.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/10 bg-[#f9f9f9] dark:bg-slate-950 mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full max-w-7xl mx-auto">
+<div class="flex flex-col gap-1 mb-8 md:mb-0">
+<span class="text-xs tracking-wide uppercase font-bold text-[#1A237E] dark:text-[#bdc2ff]">© 2024 HANU University. All rights reserved. v2.4.0</span>
+<p class="text-slate-500 dark:text-slate-400 text-xs">A premium registrar ecosystem built for high-performance students.</p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="text-slate-500 dark:text-slate-400 text-xs tracking-wide uppercase hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors" href="#">Support Contacts</a>
+<a class="text-slate-500 dark:text-slate-400 text-xs tracking-wide uppercase hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors" href="#">University Directory</a>
+<a class="text-slate-500 dark:text-slate-400 text-xs tracking-wide uppercase hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 text-xs tracking-wide uppercase hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>
