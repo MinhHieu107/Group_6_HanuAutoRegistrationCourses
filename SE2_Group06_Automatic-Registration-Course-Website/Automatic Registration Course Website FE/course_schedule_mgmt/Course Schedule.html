@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Management | HANU Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#bdc2ff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e0e0ff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#380b00",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "secondary-container": "#d2d4ff",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed": "#ffdbd0",
+                        "outline": "#767683",
+                        "on-tertiary-container": "#e17c5a",
+                        "surface-tint": "#4c56af",
+                        "surface-variant": "#e2e2e2",
+                        "outline-variant": "#c6c5d4",
+                        "on-primary-fixed-variant": "#343d96",
+                        "primary-fixed": "#e0e0ff",
+                        "surface-bright": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "on-surface-variant": "#454652",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c1c3ed",
+                        "primary": "#000666",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "secondary": "#585c80",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1a237e",
+                        "on-secondary-fixed": "#151839",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "surface": "#f9f9f9",
+                        "on-primary-container": "#8690ee",
+                        "on-secondary-fixed-variant": "#414467",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-container": "#575b7f",
+                        "surface-container": "#eeeeee",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-container": "#5c1800",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#390c00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-fixed": "#000767",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c6c5d4; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-surface-container-low flex flex-col p-4 gap-2 z-40">
+<div class="mb-8 px-2">
+<h2 class="text-lg font-black text-primary">Admin Portal</h2>
+<p class="text-xs font-body text-on-surface-variant">Management Suite</p>
+</div>
+<nav class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium font-body">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-container-high text-primary rounded-lg font-bold transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body">Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-medium font-body">Schedules</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-medium font-body">Rules</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 pt-4 border-t border-outline-variant/10">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-sm font-body">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-body">Settings</span>
+</a>
+</div>
+</aside>
+<div class="ml-64 flex flex-col min-h-screen">
+<header class="bg-background text-primary flex justify-between items-center w-full px-8 py-4 sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-bold tracking-tight text-primary">HANU Automatic Registration</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-8">
+<a class="text-slate-600 font-medium hover:text-primary" href="#">Dashboard</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Course Search</a>
+<a class="text-slate-600 font-medium hover:text-primary" href="#">Timetable</a>
+<a class="text-slate-600 font-medium hover:text-primary" href="#">History</a>
+</div>
+<div class="flex items-center gap-4 ml-6 border-l border-outline-variant/20 pl-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="notifications">notifications</button>
+<div class="flex items-center gap-2 group cursor-pointer">
+<img alt="Admin Profile" class="w-8 h-8 rounded-full border border-outline-variant/20" data-alt="portrait of a professional male administrator in a clean office setting, soft professional lighting, university environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIvu_whYLDAfYkqL3AmxaXxi0VOUQtSTllzASRfzvCYgLK9OS3c0KszP7hfFOPbdByDohWJclw6l-biiOFPTsUao0kTk5KuBIsVNDYJvzya36vDbONAS_cjcgF4-zT_kWwYKEmnyc2Qlg1gbinCA5Y4rB6Ld_vcW6zBdc7fahRvm7SDrGNO4FBrpAvLYipj4l6GfUclUC1A-3FETzEz2UyZqYI3FBrEee1tzLkU6EOzU9xMW2wVBkhc7WLpMuSnwSeg-B9vbbOV08"/>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow p-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface headline">Course Management</h2>
+<p class="text-on-surface-variant mt-1 font-body">Manage academic catalog and enrollment constraints</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="bg-surface-container-high text-primary px-4 py-2.5 rounded-lg font-semibold flex items-center gap-2 hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="upload_file">upload_file</span>
+                            Import CSV
+                        </button>
+<button class="bg-surface-container-high text-primary px-4 py-2.5 rounded-lg font-semibold flex items-center gap-2 hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="dynamic_feed">dynamic_feed</span>
+                            Bulk Update Slots
+                        </button>
+<button class="bg-primary text-white px-5 py-2.5 rounded-lg font-semibold flex items-center gap-2 shadow-sm hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span>
+                            Add New Course
+                        </button>
+</div>
+</div>
+<section class="bg-surface-container-low rounded-xl p-6 mb-8">
+<div class="flex flex-col md:flex-row gap-4 mb-8">
+<div class="flex-grow relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-surface-tint/20 text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search by course name, code, or instructor..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-3 bg-surface-container-lowest rounded-lg flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                                Filter
+                            </button>
+<button class="px-4 py-3 bg-surface-container-lowest rounded-lg flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="sort">sort</span>
+                                Sort
+                            </button>
+</div>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-separate border-spacing-y-2">
+<thead>
+<tr class="text-on-surface-variant text-xs uppercase tracking-widest font-bold">
+<th class="px-4 py-2">Code</th>
+<th class="px-4 py-2">Course Name</th>
+<th class="px-4 py-2">Instructor</th>
+<th class="px-4 py-2">Schedule</th>
+<th class="px-4 py-2">Capacity</th>
+<th class="px-4 py-2 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="text-sm font-body">
+<tr class="bg-surface-container-lowest hover:bg-surface-container-high transition-colors group">
+<td class="px-4 py-5 rounded-l-xl font-semibold text-primary">CS101</td>
+<td class="px-4 py-5">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Intro to Computer Science</span>
+<span class="text-xs text-on-surface-variant">General Engineering</span>
+</div>
+</td>
+<td class="px-4 py-5">Dr. Alan Turing</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-surface-container-high rounded text-[10px] font-bold uppercase">Mon, Wed</span>
+<span class="text-xs">09:00 - 10:30</span>
+</div>
+</td>
+<td class="px-4 py-5">
+<div class="w-32">
+<div class="flex justify-between text-[10px] mb-1">
+<span class="font-bold">45/50</span>
+<span class="text-on-tertiary-container">90%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5">
+<div class="bg-on-tertiary-container h-1.5 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</td>
+<td class="px-4 py-5 rounded-r-xl text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-primary-fixed rounded-lg text-primary transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-high transition-colors group">
+<td class="px-4 py-5 rounded-l-xl font-semibold text-primary">MATH202</td>
+<td class="px-4 py-5">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Linear Algebra</span>
+<span class="text-xs text-on-surface-variant">Mathematics Dept</span>
+</div>
+</td>
+<td class="px-4 py-5">Prof. Emmy Noether</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-surface-container-high rounded text-[10px] font-bold uppercase">Tue, Thu</span>
+<span class="text-xs">11:00 - 12:30</span>
+</div>
+</td>
+<td class="px-4 py-5">
+<div class="w-32">
+<div class="flex justify-between text-[10px] mb-1">
+<span class="font-bold text-on-error-container">30/30</span>
+<span class="text-on-error-container font-bold">FULL</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5">
+<div class="bg-error h-1.5 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="px-4 py-5 rounded-r-xl text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-primary-fixed rounded-lg text-primary transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-high transition-colors group">
+<td class="px-4 py-5 rounded-l-xl font-semibold text-primary">PHY105</td>
+<td class="px-4 py-5">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Quantum Mechanics I</span>
+<span class="text-xs text-on-surface-variant">Physics Faculty</span>
+</div>
+</td>
+<td class="px-4 py-5">Dr. Richard Feynman</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-surface-container-high rounded text-[10px] font-bold uppercase">Fri</span>
+<span class="text-xs">14:00 - 17:00</span>
+</div>
+</td>
+<td class="px-4 py-5">
+<div class="w-32">
+<div class="flex justify-between text-[10px] mb-1">
+<span class="font-bold">12/25</span>
+<span class="text-on-surface-variant">48%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 48%"></div>
+</div>
+</div>
+</td>
+<td class="px-4 py-5 rounded-r-xl text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-primary-fixed rounded-lg text-primary transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-8 flex justify-between items-center px-4">
+<span class="text-xs text-on-surface-variant font-medium uppercase tracking-wider">Showing 3 of 124 Courses</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-lg text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-lg font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-lg text-on-surface-variant hover:text-primary transition-all">2</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-lg text-on-surface-variant hover:text-primary transition-all">3</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-lg text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="w-full border-t border-slate-200/10 bg-background mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full max-w-7xl mx-auto gap-8">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<p class="text-xs font-label tracking-wide uppercase text-slate-500">© 2024 HANU University. All rights reserved. v2.4.0</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-xs font-label tracking-wide uppercase text-slate-500 hover:text-primary transition-colors" href="#">Support Contacts</a>
+<a class="text-xs font-label tracking-wide uppercase text-slate-500 hover:text-primary transition-colors" href="#">University Directory</a>
+<a class="text-xs font-label tracking-wide uppercase text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-label tracking-wide uppercase text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
