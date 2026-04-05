@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HANU Timetable | Academic Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#bdc2ff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e0e0ff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#380b00",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "secondary-container": "#d2d4ff",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed": "#ffdbd0",
+                        "outline": "#767683",
+                        "on-tertiary-container": "#e17c5a",
+                        "surface-tint": "#4c56af",
+                        "surface-variant": "#e2e2e2",
+                        "outline-variant": "#c6c5d4",
+                        "on-primary-fixed-variant": "#343d96",
+                        "primary-fixed": "#e0e0ff",
+                        "surface-bright": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "on-surface-variant": "#454652",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c1c3ed",
+                        "primary": "#000666",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "secondary": "#585c80",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1a237e",
+                        "on-secondary-fixed": "#151839",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "surface": "#f9f9f9",
+                        "on-primary-container": "#8690ee",
+                        "on-secondary-fixed-variant": "#414467",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-container": "#575b7f",
+                        "surface-container": "#eeeeee",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-container": "#5c1800",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#390c00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-fixed": "#000767",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    "animation": {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+        .conflict-glow {
+            box-shadow: 0 0 15px rgba(186, 26, 26, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-[#f9f9f9] dark:bg-slate-950 flex justify-between items-center w-full px-8 py-4 sticky top-0 z-50 border-b border-surface-container">
+<div class="text-xl font-bold tracking-tight text-[#1A237E] dark:text-[#bdc2ff]">
+            HANU Automatic Registration
+        </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors duration-200" href="#">Course Search</a>
+<a class="text-[#1A237E] dark:text-[#bdc2ff] font-bold border-b-2 border-[#1A237E] dark:border-[#bdc2ff] pb-1" href="#">Timetable</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1A237E] dark:hover:text-[#bdc2ff] transition-colors duration-200" href="#">History</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#f3f3f3] dark:hover:bg-slate-800 transition-colors duration-200">
+<span class="material-symbols-outlined text-[#1A237E] dark:text-[#bdc2ff]">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#f3f3f3] dark:hover:bg-slate-800 transition-colors duration-200">
+<span class="material-symbols-outlined text-[#1A237E] dark:text-[#bdc2ff]">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-8 space-y-6">
+<!-- Conflict Warning Bar & Status Bar -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Conflict Warning -->
+<div class="md:col-span-8 flex items-center gap-6 bg-error-container border-2 border-error/20 text-on-error-container p-6 rounded-2xl shadow-sm">
+<div class="flex items-center justify-center bg-error/10 p-3 rounded-full animate-pulse-slow">
+<span class="material-symbols-outlined text-error text-3xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<p class="font-extrabold headline text-lg text-error">Schedule Conflict Detected</p>
+<span class="px-2 py-0.5 bg-error text-white text-[10px] font-bold rounded-full uppercase tracking-tighter">Blocking Registration</span>
+</div>
+<p class="text-sm font-medium">
+<span class="font-bold">ECON405 (Mon P3-4)</span> overlaps with <span class="font-bold">LAW201 (Mon P4-5)</span>. 
+                        Automatic registration will fail for both courses unless one is removed or rescheduled.
+                    </p>
+</div>
+</div>
+<!-- Prerequisite Status -->
+<div class="md:col-span-4 flex flex-col justify-center bg-surface-container-low p-6 rounded-2xl">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Prerequisite Check</span>
+<span class="text-xs font-bold text-on-tertiary-container">5/5 Met</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full w-[100%] rounded-full"></div>
+</div>
+<p class="text-[10px] text-outline mt-2">All course requirements for this schedule are satisfied.</p>
+</div>
+</div>
+<!-- Toolbar / Controls -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-surface-container-lowest p-6 rounded-xl border border-surface-container">
+<div class="flex items-center gap-6">
+<h1 class="text-3xl font-extrabold headline tracking-tight">Autumn 2024</h1>
+<div class="flex items-center gap-2 bg-surface-container rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-xs">calendar_today</span>
+<span class="text-sm font-medium">Week 8 (Oct 21 - Oct 26)</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-primary hover:bg-surface-container-high rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">tune</span>
+                    Toggle View
+                </button>
+<button class="flex items-center gap-2 px-6 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-primary to-primary-container rounded-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg">save</span>
+                    Save Preferences
+                </button>
+</div>
+</div>
+<!-- Calendar Grid Layout -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-container">
+<div class="grid grid-cols-7 border-b border-surface-container bg-surface-container-low/50">
+<!-- Time Column Header -->
+<div class="p-4 border-r border-surface-container text-center">
+<span class="text-[10px] font-bold uppercase text-outline">Period</span>
+</div>
+<!-- Days Header -->
+<div class="p-4 text-center"><span class="block text-sm font-bold headline">MON</span><span class="text-[10px] text-outline uppercase">Oct 21</span></div>
+<div class="p-4 text-center"><span class="block text-sm font-bold headline">TUE</span><span class="text-[10px] text-outline uppercase">Oct 22</span></div>
+<div class="p-4 text-center"><span class="block text-sm font-bold headline">WED</span><span class="text-[10px] text-outline uppercase">Oct 23</span></div>
+<div class="p-4 text-center"><span class="block text-sm font-bold headline">THU</span><span class="text-[10px] text-outline uppercase">Oct 24</span></div>
+<div class="p-4 text-center"><span class="block text-sm font-bold headline">FRI</span><span class="text-[10px] text-outline uppercase">Oct 25</span></div>
+<div class="p-4 text-center"><span class="block text-sm font-bold headline">SAT</span><span class="text-[10px] text-outline uppercase">Oct 26</span></div>
+</div>
+<!-- Calendar Rows -->
+<div class="grid grid-cols-7 relative">
+<!-- Time Indicators -->
+<div class="col-span-1 divide-y divide-surface-container bg-surface-container-low border-r border-surface-container">
+<div class="h-20 flex flex-col items-center justify-center p-2"><span class="text-xs font-bold text-primary">P1</span><span class="text-[10px] text-outline">08:00</span></div>
+<div class="h-20 flex flex-col items-center justify-center p-2"><span class="text-xs font-bold text-primary">P2</span><span class="text-[10px] text-outline">09:15</span></div>
+<div class="h-20 flex flex-col items-center justify-center p-2"><span class="text-xs font-bold text-primary">P3</span><span class="text-[10px] text-outline">10:30</span></div>
+<div class="h-20 flex flex-col items-center justify-center p-2"><span class="text-xs font-bold text-primary">P4</span><span class="text-[10px] text-outline">11:45</span></div>
+<div class="h-20 flex flex-col items-center justify-center p-2 bg-surface-container-high/30"><span class="text-[10px] font-bold text-outline">BREAK</span></div>
+<div class="h-20 flex flex-col items-center justify-center p-2"><span class="text-xs font-bold text-primary">P5</span><span class="text-[10px] text-outline">13:30</span></div>
+<div class="h-20 flex flex-col items-center justify-center p-2"><span class="text-xs font-bold text-primary">P6</span><span class="text-[10px] text-outline">14:45</span></div>
+<div class="h-20 flex flex-col items-center justify-center p-2"><span class="text-xs font-bold text-primary">P7</span><span class="text-[10px] text-outline">16:00</span></div>
+<div class="h-20 flex flex-col items-center justify-center p-2"><span class="text-xs font-bold text-primary">P8</span><span class="text-[10px] text-outline">17:15</span></div>
+</div>
+<!-- Main Grid Body -->
+<div class="col-span-6 grid grid-cols-6 grid-rows-9 relative">
+<!-- Grid Lines -->
+<div class="absolute inset-0 grid grid-cols-6 pointer-events-none">
+<div class="border-r border-surface-container/30 h-full"></div>
+<div class="border-r border-surface-container/30 h-full"></div>
+<div class="border-r border-surface-container/30 h-full"></div>
+<div class="border-r border-surface-container/30 h-full"></div>
+<div class="border-r border-surface-container/30 h-full"></div>
+</div>
+<div class="absolute inset-0 grid grid-rows-9 pointer-events-none">
+<div class="border-b border-surface-container/30 w-full"></div>
+<div class="border-b border-surface-container/30 w-full"></div>
+<div class="border-b border-surface-container/30 w-full"></div>
+<div class="border-b border-surface-container/30 w-full"></div>
+<div class="border-b border-surface-container/30 w-full"></div>
+<div class="border-b border-surface-container/30 w-full"></div>
+<div class="border-b border-surface-container/30 w-full"></div>
+<div class="border-b border-surface-container/30 w-full"></div>
+</div>
+<!-- Course Blocks -->
+<!-- MON: P1-2 (Macroeconomics) -->
+<div class="row-start-1 row-end-3 col-start-1 col-end-2 p-1">
+<div class="h-full w-full bg-gradient-to-br from-secondary-container to-secondary-fixed rounded-lg p-3 shadow-sm border border-secondary/10">
+<span class="block text-[10px] font-bold text-on-secondary-fixed uppercase mb-1">ECON301</span>
+<span class="block text-xs font-extrabold text-on-secondary-fixed headline leading-tight">Macroeconomics II</span>
+<span class="block text-[10px] text-on-secondary-fixed-variant mt-2 font-medium">Room: B204</span>
+</div>
+</div>
+<!-- MON: P3-4 (Advanced Econometrics - CONFLICT) -->
+<div class="row-start-3 row-end-5 col-start-1 col-end-2 p-1 z-20">
+<div class="h-full w-full bg-error-container border-[3px] border-error rounded-xl p-3 shadow-xl conflict-glow flex flex-col">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-black text-on-error-container uppercase">ECON405</span>
+<span class="material-symbols-outlined text-sm text-error animate-pulse" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<span class="block text-xs font-extrabold text-on-error-container headline leading-tight">Advanced Econometrics</span>
+<div class="mt-auto">
+<span class="block text-[10px] font-bold text-error uppercase tracking-wider">Major Conflict</span>
+</div>
+<!-- Red Overlay -->
+<div class="absolute inset-1 bg-error/5 rounded-lg pointer-events-none"></div>
+</div>
+</div>
+<!-- MON: P4-5 (Business Law - CONFLICT OVERLAP) -->
+<div class="row-start-4 row-end-6 col-start-1 col-end-2 p-1 z-10 translate-x-2 translate-y-3">
+<div class="h-full w-full bg-surface-container-highest border-[3px] border-outline/50 rounded-xl p-3 shadow-lg backdrop-blur-sm bg-white/80">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-on-surface uppercase">LAW201</span>
+<span class="material-symbols-outlined text-sm text-outline">error_outline</span>
+</div>
+<span class="block text-xs font-extrabold text-on-surface headline leading-tight">Business Law I</span>
+<div class="mt-auto">
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider">Overlapping</span>
+</div>
+</div>
+</div>
+<!-- TUE: P2-3 (Digital Marketing) -->
+<div class="row-start-2 row-end-4 col-start-2 col-end-3 p-1">
+<div class="h-full w-full bg-gradient-to-br from-tertiary-fixed to-tertiary-fixed-dim rounded-lg p-3 shadow-sm border border-tertiary/10">
+<span class="block text-[10px] font-bold text-on-tertiary-fixed uppercase mb-1">MKT402</span>
+<span class="block text-xs font-extrabold text-on-tertiary-fixed headline leading-tight">Digital Marketing Strategy</span>
+<span class="block text-[10px] text-on-tertiary-fixed-variant mt-2 font-medium">Room: Lab 4</span>
+</div>
+</div>
+<!-- THU: P5-6 (Supply Chain) -->
+<div class="row-start-6 row-end-8 col-start-4 col-end-5 p-1">
+<div class="h-full w-full bg-gradient-to-br from-primary-fixed to-primary-fixed-dim rounded-lg p-3 shadow-sm border border-primary/10">
+<span class="block text-[10px] font-bold text-on-primary-fixed uppercase mb-1">BUS311</span>
+<span class="block text-xs font-extrabold text-on-primary-fixed headline leading-tight">Supply Chain Management</span>
+<span class="block text-[10px] text-on-primary-fixed-variant mt-2 font-medium">Room: A101</span>
+</div>
+</div>
+<!-- FRI: P1-2 (Human Resources) -->
+<div class="row-start-1 row-end-3 col-start-5 col-end-6 p-1">
+<div class="h-full w-full bg-gradient-to-br from-secondary-container to-secondary-fixed rounded-lg p-3 shadow-sm border border-secondary/10">
+<span class="block text-[10px] font-bold text-on-secondary-fixed uppercase mb-1">HRM204</span>
+<span class="block text-xs font-extrabold text-on-secondary-fixed headline leading-tight">HR Relations &amp; Ethics</span>
+<span class="block text-[10px] text-on-secondary-fixed-variant mt-2 font-medium">Room: C305</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar / Details for Courses -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl border border-surface-container">
+<h3 class="headline font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">fact_check</span>
+                    Conflicting Courses
+                </h3>
+<div class="space-y-4">
+<!-- Conflict Detail 1 -->
+<div class="p-4 bg-error-container/40 rounded-xl border border-error/20">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-error uppercase">ECON405</p>
+<p class="text-sm font-bold headline">Advanced Econometrics</p>
+</div>
+<button class="p-1.5 hover:bg-error/10 rounded-full text-error transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<p class="text-[10px] text-on-error-container leading-relaxed">Blocks registration due to overlap with LAW201 on Monday.</p>
+<div class="mt-4 flex gap-2">
+<button class="flex-1 py-1.5 bg-error text-white text-[10px] font-bold rounded-lg hover:bg-error/90 transition-all">REMOVE</button>
+<button class="flex-1 py-1.5 bg-white border border-error/30 text-error text-[10px] font-bold rounded-lg hover:bg-error/5 transition-all">RESOLVE</button>
+</div>
+</div>
+<!-- Conflict Detail 2 -->
+<div class="p-4 bg-surface-container-lowest rounded-xl border border-surface-container">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-primary uppercase">LAW201</p>
+<p class="text-sm font-bold headline">Business Law I</p>
+</div>
+<button class="p-1.5 hover:bg-surface-container-high rounded-full text-outline transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<p class="text-[10px] text-on-surface-variant leading-relaxed">Secondary conflict. Consider moving this section to Wednesday.</p>
+<div class="mt-4 flex gap-2">
+<button class="flex-1 py-1.5 bg-surface-container-highest text-on-surface text-[10px] font-bold rounded-lg">REMOVE</button>
+<button class="flex-1 py-1.5 bg-primary text-white text-[10px] font-bold rounded-lg">FIND SECTION</button>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group border border-surface-container">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<h3 class="headline font-bold text-lg mb-2">Automated Enrollment Strategy</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed max-w-lg">
+                            The HANU Curator service will attempt to register these courses the moment the window opens. <span class="text-error font-bold italic">Schedule conflicts currently block your enrollment pipeline.</span>
+</p>
+</div>
+<div class="mt-6 flex gap-12">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase text-outline flex items-center gap-1">
+                                Success Probability
+                                <span class="material-symbols-outlined text-[12px] text-error" style="font-variation-settings: 'FILL' 1;">error</span>
+</span>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black headline text-error">0%</span>
+<span class="text-[10px] text-error font-bold">(Conflict)</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase text-outline">Total Credits</span>
+<span class="text-3xl font-black headline text-primary">18.0</span>
+</div>
+</div>
+</div>
+<img alt="abstract university architecture" class="absolute top-0 right-0 h-full w-1/3 object-cover mix-blend-overlay opacity-20 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTrMtnIuFP72q1NODquQwHDrDkz6oMGVrkHHznIaMLWyiQydFmDzzd-WWolpnY2pd6lo-y-O27t715ZF7rMcWQI2iyQJVQL5PSRKRv1OtDG3Kyhu_dO9FSw4iivh25VPMqFeMEMlgdCAS96wHa64mUvcpjIksJucJ22oHIgqQrEFoKuuo32ovgNHRgGevbKUHzq7JHU4skfrErapFKyDloRzA6q6irWf_Lm0R3F4mGI2d5qTLGAWgR9z9Gay44DhgfhEpJb-jGMNQ"/>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-background w-full border-t border-surface-container mt-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full max-w-7xl mx-auto">
+<div class="flex flex-col gap-2 mb-8 md:mb-0 text-center md:text-left">
+<div class="text-[#1A237E] font-bold headline tracking-tight">HANU UNIVERSITY</div>
+<p class="text-slate-500 text-xs tracking-wide uppercase">© 2024 HANU University. All rights reserved. v2.4.0</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-12">
+<a class="text-slate-500 hover:text-primary transition-colors text-xs tracking-wide uppercase font-semibold" href="#">Support</a>
+<a class="text-slate-500 hover:text-primary transition-colors text-xs tracking-wide uppercase font-semibold" href="#">Directory</a>
+<a class="text-slate-500 hover:text-primary transition-colors text-xs tracking-wide uppercase font-semibold" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-primary transition-colors text-xs tracking-wide uppercase font-semibold" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>
